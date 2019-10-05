@@ -2,30 +2,22 @@
 
 namespace PotetoDev\LaravelUiStisla;
 
-use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
-use PotetoDev\LaravelUiStisla\Console\StislaCommand;
+use Laravel\Ui\UiCommand;
 
-class StislaServiceProvider extends ServiceProvider implements DeferrableProvider
+class StislaServiceProvider extends ServiceProvider
 {
     /**
-     * Register any package services.
+     * Perform post-registration booting of services.
      *
      * @return void
      */
-    public function register()
+    public function boot()
     {
-        if ($this->app->runningInConsole()) {
-            $this->commands([
-                StislaCommand::class
-            ]);
-        }
-    }
+        UiCommand::macro('stisla', function (UiCommand $command) {
+            StislaPreset::install();
 
-    public function provides()
-    {
-        return [
-            StislaCommand::class
-        ];
+            $command->info('Stisla UI scaffolding installed successfully.');
+        });
     }
 }
