@@ -3,12 +3,11 @@
 namespace PotetoDev\LaravelUiStisla;
 
 use Laravel\Ui\Presets\Preset;
-use Laravel\Ui\UiCommand;
 
 class StislaPreset extends Preset
 {
     /**
-     * Install the preset
+     * Install the preset.
      *
      * @return void
      */
@@ -28,7 +27,11 @@ class StislaPreset extends Preset
     protected static function updatePackageArray(array $packages)
     {
         return [
-            // TODO: Add package to update
+            '@fortawesome/fontawesome-free' => '^5.10.2',
+            'bootstrap' => '^4.3.1',
+            'vue' => '^2.5.17',
+            'vue-template-compiler' => '^2.6.10',
+            'bootstrap-vue' => '^2.0.1',
         ] + $packages;
     }
 }
