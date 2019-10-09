@@ -15,7 +15,7 @@ window.jQuery = window.$ = require('jquery');
 window.moment = require('moment');
 
 require('popper.js');
-require('assets/resources/js/bootstrap');
+require('bootstrap');
 require('jquery.nicescroll');
 
 require('./stisla/stisla');

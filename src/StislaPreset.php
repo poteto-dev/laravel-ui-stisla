@@ -4,6 +4,7 @@ namespace PotetoDev\LaravelUiStisla;
 
 use Illuminate\Filesystem\Filesystem;
 use Laravel\Ui\Presets\Preset;
+use Laravel\Ui\UiCommand;
 
 class StislaPreset extends Preset
 {
@@ -12,14 +13,18 @@ class StislaPreset extends Preset
     /**
      * Install the preset.
      *
+     * @param UiCommand $command
      * @return void
      */
-    public static function install()
+    public static function install(UiCommand $command)
     {
         static::updatePackages();
 
+        $command->info('Updating Resource JS');
         static::updateScripts();
+        $command->info('Updating Resource SASS');
         static::updateStyles();
+        $command->info('Updating Resource Layouts');
         static::updateLayoutViews();
 
         static::removeNodeModules();
@@ -35,10 +40,10 @@ class StislaPreset extends Preset
     {
         return [
             '@fortawesome/fontawesome-free' => '^5.10.2',
+            'moment' => '^2.24',
             'bootstrap' => '^4.3.1',
-            'vue' => '^2.5.17',
-            'vue-template-compiler' => '^2.6.10',
-            'bootstrap-vue' => '^2.0.1',
+            'jquery' => '^3.4',
+            'jquery.nicescroll' => '^3.7'
         ] + $packages;
     }
 
