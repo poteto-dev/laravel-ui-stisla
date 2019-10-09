@@ -2,10 +2,13 @@
 
 namespace PotetoDev\LaravelUiStisla;
 
+use Illuminate\Filesystem\Filesystem;
 use Laravel\Ui\Presets\Preset;
 
 class StislaPreset extends Preset
 {
+    const RESOURCE_PATH = __DIR__.'/../resources/';
+
     /**
      * Install the preset.
      *
@@ -14,7 +17,11 @@ class StislaPreset extends Preset
     public static function install()
     {
         static::updatePackages();
-        // TODO: Add some preset
+
+        static::updateScripts();
+        static::updateStyles();
+        static::updateLayoutViews();
+
         static::removeNodeModules();
     }
 
@@ -33,5 +40,62 @@ class StislaPreset extends Preset
             'vue-template-compiler' => '^2.6.10',
             'bootstrap-vue' => '^2.0.1',
         ] + $packages;
+    }
+
+    /**
+     * Update the JS
+     *
+     * @return void
+     */
+    protected static function updateScripts()
+    {
+        (new Filesystem)->deleteDirectory(resource_path('js'));
+
+        static::copyDirectory(static::RESOURCE_PATH.'js', resource_path('js'));
+    }
+
+    /**
+     * Update the SCSS
+     *
+     * @return void
+     */
+    protected static function updateStyles()
+    {
+        (new Filesystem)->deleteDirectory(resource_path('sass'));
+
+        static::copyDirectory(static::RESOURCE_PATH.'sass', resource_path('sass'));
+    }
+
+    /**
+     * Update the default layout
+     */
+    protected static function updateLayoutViews()
+    {
+        static::copyDirectory(static::RESOURCE_PATH.'views/layouts', resource_path('views/layouts'));
+        static::copyDirectory(static::RESOURCE_PATH.'views/partials', resource_path('views/partials'));
+        static::copyDirectory(static::RESOURCE_PATH.'views/app', resource_path('views/app'));
+    }
+
+    /**
+     * Delete a file
+     *
+     * @param $source
+     * @return void
+     */
+    private static function delete($source)
+    {
+        (new Filesystem)->delete(base_path($source));
+    }
+
+    /**
+     * Copy a directory
+     *
+     * @param $source
+     * @param $destination
+     * @return void
+     */
+    private static function copyDirectory($source, $destination)
+    {
+        (new Filesystem)->copyDirectory($source, $destination);
     }
 }
