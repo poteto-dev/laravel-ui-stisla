@@ -19,6 +19,8 @@ class StislaPreset extends Preset
     public static function install(UiCommand $command)
     {
         static::updatePackages();
+        $command->info('Updating Assets');
+        static::updateAssets();
 
         $command->info('Updating Resource JS');
         static::updateScripts();
@@ -26,6 +28,8 @@ class StislaPreset extends Preset
         static::updateStyles();
         $command->info('Updating Resource Layouts');
         static::updateLayoutViews();
+        $command->info('Updating Webpack Mix');
+        static::updateMix();
 
         static::removeNodeModules();
     }
@@ -45,6 +49,19 @@ class StislaPreset extends Preset
             'jquery' => '^3.4',
             'jquery.nicescroll' => '^3.7'
         ] + $packages;
+    }
+
+    /**
+     * Update the assets.
+     *
+     * @return void
+     */
+    protected static function updateAssets()
+    {
+        static::copyDirectory(
+            __DIR__.'/../assets',
+            public_path('assets')
+        );
     }
 
     /**
@@ -73,12 +90,27 @@ class StislaPreset extends Preset
 
     /**
      * Update the default layout
+     *
+     * @return void
      */
     protected static function updateLayoutViews()
     {
         static::copyDirectory(static::RESOURCE_PATH.'views/layouts', resource_path('views/layouts'));
         static::copyDirectory(static::RESOURCE_PATH.'views/partials', resource_path('views/partials'));
         static::copyDirectory(static::RESOURCE_PATH.'views/app', resource_path('views/app'));
+    }
+
+    /**
+     * Update the webpack.mix.js
+     *
+     * @return void
+     */
+    protected static function updateMix()
+    {
+        copy(
+            __DIR__.'/../stubs/webpack.mix.js',
+            base_path('webpack.mix.js')
+        );
     }
 
     /**
