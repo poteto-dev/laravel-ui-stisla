@@ -77,17 +77,6 @@ class StislaPreset extends Preset
     }
 
     /**
-     * Delete a file
-     *
-     * @param $source
-     * @return void
-     */
-    private static function delete($source)
-    {
-        (new Filesystem)->delete(base_path($source));
-    }
-
-    /**
      * Copy a directory
      *
      * @param $source
