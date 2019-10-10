@@ -1,5 +1,5 @@
 {
-    "name": "poteto-dev/laravel-ui-stisla",
+    "name": "poteto/laravel-ui-stisla",
     "description": "The laravel UI with Stisla Dashboard",
     "keywords": ["laravel", "ui", "stisla"],
     "require": {
