@@ -44,6 +44,7 @@ class StislaPreset extends Preset
     {
         return [
             '@fortawesome/fontawesome-free' => '^5.10.2',
+            'popper.js' => '^1.14',
             'moment' => '^2.24',
             'bootstrap' => '^4.3.1',
             'jquery' => '^3.4',
@@ -71,8 +72,6 @@ class StislaPreset extends Preset
      */
     protected static function updateScripts()
     {
-        (new Filesystem)->deleteDirectory(resource_path('js'));
-
         static::copyDirectory(static::RESOURCE_PATH.'js', resource_path('js'));
     }
 
