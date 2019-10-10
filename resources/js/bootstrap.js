@@ -15,12 +15,12 @@ window.jQuery = window.$ = require('jquery');
 window.moment = require('moment');
 
 require('popper.js');
-require('assets/resources/js/bootstrap');
+require('bootstrap');
 require('jquery.nicescroll');
 
-require('./stiesla/stisla');
-require('./stiesla/scripts');
-require('./stiesla/custom');
+require('./stisla/stisla');
+require('./stisla/scripts');
+require('./stisla/custom');
 
 /**
  * Next we will register the CSRF Token as a common header with Axios so that
