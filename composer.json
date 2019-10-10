@@ -2,6 +2,12 @@
     "name": "poteto-dev/laravel-ui-stisla",
     "description": "The laravel UI with Stisla Dashboard",
     "keywords": ["laravel", "ui", "stisla"],
+    "authors": [
+        {
+            "name": "Poteto Dev",
+            "email": "tech@poteto.dev"
+        }
+    ],
     "require": {
         "php": "^7.1.3",
         "laravel/ui": "^1.0",
@@ -24,5 +30,6 @@
             ]
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
