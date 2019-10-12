@@ -2,6 +2,7 @@
     "name": "poteto-dev/laravel-ui-stisla",
     "description": "The laravel UI with Stisla Dashboard",
     "keywords": ["laravel", "ui", "stisla"],
+    "license": "MIT",
     "authors": [
         {
             "name": "Poteto Dev",
