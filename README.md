@@ -26,4 +26,4 @@ php artisan ui stisla
 ```
 
 ## License
-laravel-ui-stisla is under [MIT License](LICENSE)
+laravel-ui-stisla is under [MIT License](LICENSE.md)
