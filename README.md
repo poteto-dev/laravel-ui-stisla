@@ -26,4 +26,4 @@ php artisan ui stisla
 ```
 
 ## License
-this package is under [MIT License](LICENSE.md)
+This package is under [MIT License](LICENSE.md)
