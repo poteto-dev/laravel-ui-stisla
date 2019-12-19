@@ -9,6 +9,7 @@ use Laravel\Ui\UiCommand;
 class StislaPreset extends Preset
 {
     const RESOURCE_PATH = __DIR__.'/../resources/';
+    const STISLA_PATH = __DIR__.'/../stisla/';
 
     /**
      * Install the preset.
@@ -72,7 +73,13 @@ class StislaPreset extends Preset
      */
     protected static function updateScripts()
     {
+        static::copyDirectory(static::STISLA_PATH.'assets/js', resource_path('js/stisla'));
         static::copyDirectory(static::RESOURCE_PATH.'js', resource_path('js'));
+
+        /**
+         * Deleting unecessary
+         */
+        (new Filesystem)->deleteDirectory(resource_path('js/stisla/page'));
     }
 
     /**
@@ -84,7 +91,10 @@ class StislaPreset extends Preset
     {
         (new Filesystem)->deleteDirectory(resource_path('sass'));
 
+        static::copyDirectory(static::STISLA_PATH.'sources/scss', resource_path('sass'));
         static::copyDirectory(static::RESOURCE_PATH.'sass', resource_path('sass'));
+
+        (new Filesystem)->delete(resource_path('sass/style.scss'));
     }
 
     /**
