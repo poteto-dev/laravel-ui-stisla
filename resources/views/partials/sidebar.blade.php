@@ -1,9 +1,9 @@
 <aside id="sidebar-wrapper">
   <div class="sidebar-brand">
-    <a href="">{{ env('APP_NAME') }}</a>
+    <a href="">{{ config('app.name') }}</a>
   </div>
   <div class="sidebar-brand sidebar-brand-sm">
-    <a href="#">{{ strtoupper(substr(env('APP_NAME'), 0, 2)) }}</a>
+    <a href="#">{{ strtoupper(substr(config('app.name'), 0, 2)) }}</a>
   </div>
   <ul class="sidebar-menu">
     <li class="menu-header">Dashboard</li>

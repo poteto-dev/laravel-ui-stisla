@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Login &mdash; {{ env('APP_NAME') }}</title>
+  <title>Login &mdash; {{ config('app.name') }}</title>
   <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 </head>
 
@@ -28,7 +28,7 @@
             @endif
             @yield('content')
             <div class="simple-footer">
-              Copyright &copy; {{ env('APP_NAME') }} {{ date('Y') }}
+              Copyright &copy; {{ config('app.name') }} {{ date('Y') }}
             </div>
           </div>
         </div>
