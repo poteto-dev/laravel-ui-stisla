@@ -27,7 +27,7 @@ if(window.Dropzone) {
 // Basic confirm box
 $('[data-confirm]').each(function() {
   var me = $(this),
-      me_data = me.data('confirm');
+    me_data = me.data('confirm');
 
   me_data = me_data.split("|");
   me.fireModal({
@@ -94,23 +94,23 @@ $(function() {
         if(me.parent().hasClass("active")){
           active = true;
         }
-        
+
         $('.main-sidebar .sidebar-menu li.active > .dropdown-menu').slideUp(500, function() {
-          update_sidebar_nicescroll();          
+          update_sidebar_nicescroll();
           return false;
         });
-        
+
         $('.main-sidebar .sidebar-menu li.active').removeClass('active');
 
         if(active==true) {
-          me.parent().removeClass('active');          
-          me.parent().find('> .dropdown-menu').slideUp(500, function() {            
+          me.parent().removeClass('active');
+          me.parent().find('> .dropdown-menu').slideUp(500, function() {
             update_sidebar_nicescroll();
             return false;
           });
         }else{
-          me.parent().addClass('active');          
-          me.parent().find('> .dropdown-menu').slideDown(500, function() {            
+          me.parent().addClass('active');
+          me.parent().find('> .dropdown-menu').slideDown(500, function() {
             update_sidebar_nicescroll();
             return false;
           });
@@ -120,7 +120,7 @@ $(function() {
       });
 
       $('.main-sidebar .sidebar-menu li.active > .dropdown-menu').slideDown(500, function() {
-        update_sidebar_nicescroll();        
+        update_sidebar_nicescroll();
         return false;
       });
     }
@@ -360,19 +360,19 @@ $(function() {
 
   if($(".chat-content").length) {
     $(".chat-content").niceScroll({
-        cursoropacitymin: .3,
-        cursoropacitymax: .8,
+      cursoropacitymin: .3,
+      cursoropacitymax: .8,
     });
     $('.chat-content').getNiceScroll(0).doScrollTop($('.chat-content').height());
   }
 
   if(jQuery().summernote) {
     $(".summernote").summernote({
-       dialogsInBody: true,
+      dialogsInBody: true,
       minHeight: 250,
     });
     $(".summernote-simple").summernote({
-       dialogsInBody: true,
+      dialogsInBody: true,
       minHeight: 150,
       toolbar: [
         ['style', ['bold', 'italic', 'underline', 'clear']],
@@ -397,8 +397,8 @@ $(function() {
   // Follow function
   $('.follow-btn, .following-btn').each(function() {
     var me = $(this),
-        follow_text = 'Follow',
-        unfollow_text = 'Following';
+      follow_text = 'Follow',
+      unfollow_text = 'Following';
 
     me.click(function() {
       if(me.hasClass('following-btn')) {
@@ -423,7 +423,7 @@ $(function() {
   // Dismiss function
   $("[data-dismiss]").each(function() {
     var me = $(this),
-        target = me.data('dismiss');
+      target = me.data('dismiss');
 
     me.click(function() {
       $(target).fadeOut(function() {
@@ -436,7 +436,7 @@ $(function() {
   // Collapsable
   $("[data-collapse]").each(function() {
     var me = $(this),
-        target = me.data('collapse');
+      target = me.data('collapse');
 
     me.click(function() {
       $(target).collapse('toggle');
@@ -492,9 +492,9 @@ $(function() {
     me.click(function() {
       if(!me.hasClass('active')) {
         var tab_group = $('[data-tab-group="' + me.data('tab') + '"]'),
-            tab_group_active = $('[data-tab-group="' + me.data('tab') + '"].active'),
-            target = $(me.attr('href')),
-            links = $('[data-tab="'+me.data('tab') +'"]');
+          tab_group_active = $('[data-tab-group="' + me.data('tab') + '"].active'),
+          target = $(me.attr('href')),
+          links = $('[data-tab="'+me.data('tab') +'"]');
 
         links.removeClass('active');
         me.addClass('active');
@@ -589,7 +589,7 @@ $(function() {
     }
     if($(".datetimepicker").length) {
       $('.datetimepicker').daterangepicker({
-        locale: {format: 'YYYY-MM-DD hh:mm'},
+        locale: {format: 'YYYY-MM-DD HH:mm'},
         singleDatePicker: true,
         timePicker: true,
         timePicker24Hour: true,
