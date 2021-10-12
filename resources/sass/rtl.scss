@@ -94,6 +94,7 @@ h1, h2, h3, h4, h5, h6, p, a, span, input, textarea, select, option, label {
 
 .section .section-header {
   font: normal normal 24px "IRANSans Bold";
+
   div {
     float: right;
   }
@@ -143,17 +144,21 @@ body {
   &:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-menu li a {
     padding-left: 0;
   }
+
   &.sidebar-mini .main-sidebar .sidebar-menu > li ul.dropdown-menu {
     left: auto;
     right: 65px;
   }
+
   &.layout-2 .main-sidebar .sidebar-menu li a.has-dropdown::after {
     left: 0;
     right: auto;
   }
+
   &:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu > li.active > a::before {
     right: 0;
   }
+
   &.layout-2 {
     .main-content {
       padding-top: 107px;
@@ -161,6 +166,7 @@ body {
       padding-left: 0;
       width: calc(100% - 200px);
     }
+
     .main-sidebar .sidebar-menu li ul.dropdown-menu li a {
       padding-right: 34px;
       padding-left: 0;
@@ -179,11 +185,13 @@ body {
       right: 65px;
       left: 0px;
     }
+
     .main-content, .main-footer {
       padding-right: 90px;
       padding-left: 30px;
     }
   }
+
   &.layout-2 .main-footer {
     margin-right: 230px;
     width: calc(100% - 230px);
@@ -237,6 +245,7 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) {
   .dropdown-item-avatar {
     float: right;
   }
+
   .dropdown-item-desc {
     margin-right: 60px;
     margin-left: 0;
@@ -251,9 +260,11 @@ body.sidebar-gone {
   .main-sidebar {
     right: -250px;
   }
+
   .main-content {
     padding-right: 30px;
   }
+
   .navbar {
     right: 0;
   }
@@ -265,21 +276,25 @@ body.sidebar-gone {
     margin-left: 15px;
     margin-right: 10px;
   }
+
   &.card-sm {
     .card-icon {
       float: right;
       text-align: left;
       padding-left: 15px;
     }
+
     .card-options {
       float: left;
       margin-left: 20px;
     }
+
     .card-wrap {
       margin-right: 30px;
       margin-left: 15px;
     }
   }
+
   &.card-sm-2 .card-icon {
     left: 20px;
     right: auto;
@@ -295,6 +310,7 @@ body.sidebar-gone {
     margin-right: auto;
     margin-left: 0px;
   }
+
   .card-header-action .btn-group .btn:first-child, .card-header-form .btn-group .btn:first-child {
     border-radius: 0 30px 30px 0 !important;
   }
@@ -369,6 +385,7 @@ body {
   .search-result::before {
     right: 34px;
   }
+
   .form-control {
     padding-right: 20px;
     padding-left: 0;
@@ -376,6 +393,7 @@ body {
     margin-right: inherit;
     border-radius: 0 3px 3px 0px;
   }
+
   .btn {
     border-radius: 3px 0 0 3px;
     padding: 9px 15px;
@@ -399,6 +417,7 @@ body {
 .breadcrumb-item + .breadcrumb-item {
   padding-right: .5rem;
   padding-left: 0;
+
   &::before {
     padding-left: .5rem;
     padding-right: 0;
@@ -425,9 +444,11 @@ body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item {
       right: unset;
       left: -20px;
     }
+
     margin-left: 35px;
     margin-right: 0;
   }
+
   &.active > .nav-link::before {
     right: 35px;
     left: 0;
@@ -436,6 +457,7 @@ body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item {
 
 .dropdown-menu-left {
   right: 0;
+
   .dropdown-menu-left {
     right: 100%;
   }
@@ -471,17 +493,20 @@ body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item .dropdown-menu .n
         border-radius: 0 5px 5px 0;
       }
     }
+
     &:not(:last-child) > {
       .btn, .input-group-text {
         border-radius: 0 5px 5px 0;
       }
     }
   }
+
   .input-group-prepend > {
     .btn, .input-group-text {
       border-radius: 0 5px 5px 0;
     }
   }
+
   .custom-select:not(:first-child), .form-control:not(:first-child) {
     border-radius: 5px 0 0 5px;
   }
@@ -491,6 +516,7 @@ body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item .dropdown-menu .n
   .card-header-action .input-group .form-control, .card-header-form .input-group .form-control {
     border-radius: 0 30px 30px 0 !important;
   }
+
   .card-header-action .input-group .form-control + .input-group-btn .btn, .card-header-form .input-group .form-control + .input-group-btn .btn {
     border-radius: 30px 0 0 30px !important;
   }
@@ -500,6 +526,7 @@ body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item .dropdown-menu .n
   .btn-group:not(:first-child) > .btn, .btn:not(:first-child) {
     border-radius: 5px 0px 0px 5px;
   }
+
   .btn-group:not(:last-child) > .btn, .btn:not(:last-child):not(.dropdown-toggle) {
     border-radius: 0px 5px 5px 0px;
   }
